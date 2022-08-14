@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#4</title>
+</head>
+<body id="body">
+    <input type="button" id="1" value="1">
+    <input type="button" id="2"value = "2">
+    <input type="button" id="3" value="3">
+    <input type="button" id="4"value= "4">
+    <script>
+        
+        
+        let rr = document.getElementById('body')
+       let i
+        rr.addEventListener("click",(e)=> {
+            i = e.target.id
+                console.log(`Ви натиснули на кнопку  - ${i}`)
+
+
+        })
+
+    </script>
+</body>
+</html>

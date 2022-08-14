@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>События клавиатуры</title>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            // Событие onkeypress используется для обработки клавиш с печатными символами.
+            document.getElementById("main").addEventListener("keypress", (e) => {
+                clear();
+                print("alt = " + e.altKey);
+                print("ctrl = " + e.ctrlKey);
+                print("shift = " + e.shiftKey);
+                print(`charCode = ${String.fromCharCode(e.charCode)}`);
+                print(`charCode = ${e.charCode}`);// код символа (передается при событии keypress)
+                print(`code = ${e.code}`) // код кнопки для всех клавиатур
+                print(`key = ${e.key}`)  
+            })
+          
+        })
+
+        const print = (message) => {
+            document.getElementById("output").innerHTML += message + "<br />";
+        }
+
+        const clear = () => {
+            document.getElementById("output").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body id="main">
+    <p id="output"></p>
+</body>
+
+</html>

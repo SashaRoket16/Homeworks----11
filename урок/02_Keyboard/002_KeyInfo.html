@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>События клавиатуры</title>
+    <script>
+        window.onload = function () {
+            const main = document.getElementById("main");
+
+            // onkeydown - событие подходит для обработки функциональных клавиш.
+            main.addEventListener("keydown", (e) => {
+                clear();
+                print("alt = " + e.altKey);
+                print("ctrl = " + e.ctrlKey);
+                print("shift = " + e.shiftKey);
+                print("charCode = " + e.keyCode); // код символа (передается при событии keypress)
+                // код кнопки для всех клавиатур
+                //  print("keyCode = " + e.keyCode);
+                console.dir(e)
+            })
+
+            function print(message) {
+                document.getElementById("output").innerHTML += message + "<br />";
+            }
+
+            function clear() {
+                document.getElementById("output").innerHTML = "";
+            }
+        }
+    </script>
+</head>
+
+<body id="main">
+    <p id="output"></p>
+</body>
+
+</html>

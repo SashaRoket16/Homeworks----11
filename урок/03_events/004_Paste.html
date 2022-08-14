@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paste</title>
+    <style>
+        img,
+        textarea {
+            width: 200px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea placeholder="Введите текст с картинки"></textarea>
+    <img src="./imgs/001.png">
+    <div></div>
+    <script>
+        document.querySelector('textarea').addEventListener('paste', (ev) => {
+            document.querySelector('div').innerText = 'Докажите что Вы не робот. Введите тескт. Вставка запрещена'
+            ev.preventDefault();
+            setTimeout(() => {
+                document.querySelector('div').innerText = '';
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

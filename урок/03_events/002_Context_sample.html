@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contextmenu</title>
+
+    <style>
+        p {
+            width: 120px;
+            height: 40px;
+            color: #fff;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        
+        .menu {
+            width: 150px;
+            box-shadow: 3px 3px 5px #888888;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 3px 5px;
+            position: fixed;
+            display: none;
+            background-color: rgb(162, 206, 171);
+        }
+        
+        .menu-item {
+            height: 20px;
+        }
+        
+        .menu-item:hover {
+            background-color: #6CB5FF;
+            cursor: pointer;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Click me</p>
+        <div class="menu">
+            <div class="menu-item"><a href='#'>Share On Facebook</a></div>
+            <div class="menu-item"><a href='#'>Share On Twitter</a></div>
+            <hr>
+            <div class="menu-item"><a href='#'>Search On Google</a></div>
+            <div class="menu-item"><a href='#'>Search On Bing</a></div>
+            <hr>
+            <div class="menu-item"><a href='#'>Bookmark</a></div>
+        </div>
+    </div>
+    <script>
+        //Отображение меню
+        let menuDisplayed = false;
+        let menuBox = null;
+
+        const contextMenu = document.querySelector('p');
+
+        contextMenu.addEventListener("contextmenu", (ev) => {
+            let left = ev.clientX;
+            let top = ev.clientY;
+            console.log("X : " + left)
+            console.log("Y : " + top)
+
+            menuBox = document.querySelector(".menu");
+            menuBox.style.left = left+ 5 + "px";
+            menuBox.style.top = top+ 5 + "px";
+            menuBox.style.display = "block";
+
+            ev.preventDefault();
+
+            menuDisplayed = true;
+        });
+
+        window.addEventListener("click", (ev) => {
+            if (menuDisplayed == true) {
+                menuBox.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

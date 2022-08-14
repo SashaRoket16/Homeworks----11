@@ -1,0 +1,14 @@
+.num {
+    width: 50%;
+    box-sizing: border-box;
+    border: 5px solid silver ;
+    display: block;
+}
+.border-focus{
+   border: 5px solid green;
+   box-sizing: border-box;
+   color: green;
+}
+.error {
+    border: 5px solid red;
+}

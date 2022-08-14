@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#2</title>
+</head>
+<body>
+    <ul class="list">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+   <script>
+    const liList = document.querySelectorAll("li");
+    
+    liList[1].nextElementSibling.style.background = 'red';
+    liList[1].previousElementSibling.style.background = "blue"
+    
+    console.log(liList);
+
+   </script>
+</body>
+</html>

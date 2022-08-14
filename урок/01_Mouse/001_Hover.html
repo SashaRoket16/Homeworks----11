@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>События мыши</title>
+
+    <script>
+
+        window.addEventListener("DOMContentLoaded",   () => {
+
+            const p = document.getElementsByTagName("p")[0];
+
+            const mouse = (e) => {
+                e.target.classList.add("hover")
+                console.log(`X:${e.clientX} / Y:${e.clientY}`)
+            }
+
+            // курсор вошел в пределы элемента.
+            p.addEventListener("mouseover", mouse)
+            
+
+            // курсор вышел за пределы элемента.
+            p.onmouseout = function () {
+                this.classList.remove("hover")
+            }
+           
+        })
+     
+
+    </script>
+
+    <style>
+        p {
+            background-color:red;
+            width:100px;
+            height:100px;
+            transition: background-color 1.5s linear 1s,  width 1.7s;
+        }
+
+        .hover{
+            background-color: green;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    
+</body>
+</html>

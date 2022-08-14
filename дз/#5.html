@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#5</title>
+</head>
+<body>
+    <div id="div">Натисни на мене</div>
+    <style>
+        div{
+            border: 2px solid red;
+            height: 40px;
+            width: 120px;
+            position: absolute;
+          
+            background-color: blue;
+        }
+    </style>
+    <script>
+       
+       
+
+        let rr = document.getElementById("banner")
+         
+        rr.addEventListener("click",(e)=> {
+        let x = Math.round(1000 *Math.random(1,1900 ))
+
+        let y = Math.round(1000 *Math.random(1,1050 )) 
+        rr.style.top =`${x}px`
+        rr.style.left = `${y}px`
+      
+    
+           
+               
+
+        })
+       
+
+  
+ 
+
+
+
+    </script>
+</body>
+</html>
